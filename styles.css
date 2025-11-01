@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+#princ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#raffle-image {
+    width: 300px;
+    margin-top: 50px;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 38px;
+}
+
+input {
+    width: 180px;
+    height: 35px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    appearance: none;
+}
+
+input::placeholder {
+    color: #ffffff;
+    opacity: .6;
+    font-weight: 400;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#but {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#draw {
+    border: none;
+    padding: 10px 50px;
+    border-radius: 6px;
+    background-color: #bad151;
+    color: white;
+    font-weight: 600;
+    width: 200px;
+    transition: .4s;
+    cursor: pointer;
+    box-shadow: 0px 8px 10px rgba(187, 211, 83, 0.18);
+}
+
+#draw:hover {
+  background-color: #c8e64a;
+  box-shadow: 0px 0px 10px rgba(180, 207, 55, 0.9);
+}
+
+#draw:active {
+  transform: scale(0.97);
+}
+
+#result {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 20px auto;
+  background-color: #2a2a2a;
+  width: 150px;
+  min-height: 50px;
+  border: 2px solid #313131;
+  border-radius: 8px;
+  color: #ebff7b;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+#number {
+  display: inline-block;
+}
+
+#close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ff5555;
+  font-weight: bold;
+  user-select: none;
+}
+
+#result.animate {
+  animation: spin 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+#result.error {
+  color: #ff5555;
+  font-size: 18px;
+}
